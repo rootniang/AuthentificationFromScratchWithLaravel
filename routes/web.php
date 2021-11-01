@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-       return view('Admin') ;
+       return view('home') ;
 });
+
+Route::get('home', HomeController::class)->name('home') ;
+Route::get('admin', AdminController::class)->name('admin')->middleware('auth') ;
+Route::get('login', [AuthController::class, 'login'])->name('login') ;
+Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate') ;
+Route::post('logout', [AuthController::class, 'logout'])->name('logout') ;
