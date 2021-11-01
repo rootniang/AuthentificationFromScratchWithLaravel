@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css'); }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-5.1.3-dist/css/bootstrap.css'); }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/admin.css'); }}">
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Welcome to Sanar Papers</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="{{ route('home') }}">
+                    <img src="" alt="brand">
+                </a>
+            </div>
+            <div class="col-lg-8">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                    </li>
+                    @auth
+                       <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}">Deconnexion</a>
+                        </li> 
+                    @endauth
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="{{ URL::asset('js/jquery.js'); }}"></script>
+    <script src="{{ URL::asset('js/admin.js'); }}"></script>
+    <script src="{{ URL::asset('css/bootstrap-5.1.3-dist/js/bootstrap.js'); }}"></script>
 </body>
 </html>
