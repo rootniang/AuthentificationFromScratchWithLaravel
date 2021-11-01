@@ -13,7 +13,7 @@ Un article peut avoir un seul auteur
 Un auteur peut publier plusieurs articles
 Un article peut avoir un seul image de cadre
  Authentification
-Users(iduser, login, mdp, nom, prenom, role)
+Users(iduser, email, mdp, nom, prenom, role)
 Un utilisateur peut etre un auteur et/ou un super admin
 Un super admin pourra CRUD un admin et auteur, Categorie article etc..
 Un auteur ne pourra que CRUD un article...
