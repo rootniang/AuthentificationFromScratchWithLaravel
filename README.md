@@ -19,3 +19,4 @@ Un super admin pourra CRUD un admin et auteur, Categorie article etc..
 Un auteur ne pourra que CRUD un article...
 Let's start all this from scratch ;)
 Day 1: Authentification 
+Done ;) Pas terrible niveau front mais on va gerer tout ca apres ;)
