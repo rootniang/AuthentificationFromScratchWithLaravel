@@ -11,14 +11,34 @@
     
 </head>
 <body>
-
-  <a href="#" onclick="document.getElementById('logout-form').submit()">
-    <form action="{{ route('logout') }}" method="post" id="logout-form">@csrf</form>
-    Se deconnecter
-  </a>
-  <div class="container">
-    <h1>Welcome to admin</h1>
-  </div>
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="{{ route('home') }}">
+                    <img src="" alt="brand">
+                </a>
+            </div>
+            <div class="col-lg-8">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin') }}">Admin</a>
+                    </li>
+                    @auth
+                       <li class="nav-item">
+                        <a href="#" onclick="document.getElementById('logout-form').submit()">
+                            <form action="{{ route('logout') }}" method="post" id="logout-form">@csrf</form>
+                            Deconnexion
+                        </a>
+                        </li> 
+                    @endauth
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
 
   <script src="{{ URL::asset('js/jquery.js'); }}"></script>
   <script src="{{ URL::asset('js/admin.js'); }}"></script>

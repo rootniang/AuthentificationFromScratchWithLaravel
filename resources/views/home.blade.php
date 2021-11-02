@@ -23,11 +23,14 @@
                         <a class="nav-link active" href="{{ route('home') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                        <a class="nav-link" href="{{ route('admin') }}">Admin</a>
                     </li>
                     @auth
                        <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Deconnexion</a>
+                        <a href="#" onclick="document.getElementById('logout-form').submit()">
+                            <form action="{{ route('logout') }}" method="post" id="logout-form">@csrf</form>
+                            Deconnexion
+                        </a>
                         </li> 
                     @endauth
                     
